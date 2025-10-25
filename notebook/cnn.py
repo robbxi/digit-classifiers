@@ -86,7 +86,7 @@ def test(model,X_test,y_test,status=True,random=True,n=100):
     
     accuracy = correct / n
     print(f"\nResults for Convolutional Neural Network Model")
-    print(f'{n} {"random" if random else ''} samples tested')
+    print(f'{n} samples tested')
     print(f"{wrong} incorrect, {correct} correct")
     print(f"{accuracy*100}% accuracy\n")
 
