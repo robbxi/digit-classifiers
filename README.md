@@ -23,7 +23,7 @@ This project implements and compares five different classification approaches fo
 
 ### Using Google Colab (Recommended)
 
-1. Open the notebook in Google Colab: [Open in Colab]([your-colab-link-here](https://colab.research.google.com/github/robbxi/digit-classifiers/blob/main/notebook/Project_1.ipynb))
+1. Open the notebook in Google Colab: 1. [Open the notebook in Google Colab](https://colab.research.google.com/github/robbxi/digit-classifiers/blob/main/notebook/Project_1.ipynb)
 2. Run the installation cell to set up dependencies
 3. Run the Interactive Demo cell
 4. Draw a digit in the canvas and click "Predict"
