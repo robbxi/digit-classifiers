@@ -44,14 +44,18 @@ jupyter notebook
 ## Project Structure
 ```
 digit-classifiers/
+├── cnn_models/                   # Saved CNN model weights
+├── linear_models/                # Saved linear classifier weights
+├── multilayer_models/            # Saved multi-layer perceptron weights
 ├── notebook/
-│   ├── knn.py                    # K-Nearest Neighbors implementation
-│   ├── naive_bayes.py            # Naive Bayes classifier
-│   ├── linear_classifier.py      # Linear classifier with PyTorch
-│   ├── ml_perceptron.py          # Multi-layer perceptron
-│   ├── cnn.py                    # Convolutional Neural Network
-│   ├── utils.py                  # Data loading and utilities
-│   └── MNIST/                    # MNIST dataset (auto-downloaded)
+│   └── Project_1.ipynb           # Main interactive notebook
+├── cnn.py                        # Convolutional Neural Network implementation
+├── knn.py                        # K-Nearest Neighbors implementation
+├── linear_classifier.py          # Linear classifier with PyTorch
+├── ml_perceptron.py              # Multi-layer perceptron
+├── naive_bayes.py                # Naive Bayes classifier
+├── utils.py                      # Data loading and utilities
+├── .gitignore
 └── README.md
 ```
 
@@ -68,7 +72,7 @@ digit-classifiers/
 ### Testing Accuracy
 
 1. **Select Model**: Choose which classifier to test (or "All" for comparison)
-2. **Set Sample Size**: Use the slider to select number of test samples (50-5000)
+2. **Set Sample Size**: Use the slider to select number of test samples (50-4000)
 3. **Confusion Matrix**: Check the box to see detailed classification errors
 4. **Test**: Click "Test Accuracy" to evaluate performance
 
@@ -76,7 +80,7 @@ digit-classifiers/
 
 ### K-Nearest Neighbors (KNN)
 - **Type**: Instance-based learning
-- **Key Parameter**: k=3 neighbors
+- **Key Parameter**: k=3 neighbors by default
 - **Pros**: Simple, no training required
 - **Cons**: Slow prediction, memory intensive
 
@@ -96,14 +100,13 @@ digit-classifiers/
 - **Type**: Deep neural network
 - **Architecture**: 784 → hidden layers → 10
 - **Activation**: ReLU
-- **Training**: Backpropagation with dropout
+- **Training**: Backpropagation
 
 ### Convolutional Neural Network (CNN)
 - **Type**: Deep learning with spatial features
 - **Architecture**: Conv layers → Pooling → FC layers
 - **Activation**: ReLU
-- **Training**: Adam optimizer, cross-entropy loss
-- **Performance**: Highest accuracy
+- **Training**: SGD optimizer, cross-entropy loss
 
 ## Results
 
@@ -127,7 +130,7 @@ This project uses the **MNIST dataset**:
 - 28x28 grayscale images
 - 10 classes (digits 0-9)
 
-The dataset is automatically downloaded on first run.
+A subset of the dataset is automatically downloaded on first run for KNN and Bayes.
 
 ## Requirements
 ```
@@ -158,24 +161,4 @@ Make sure you're in the correct directory:
 cd /content/digit-classifiers/notebook
 ```
 
-## Contributing
 
-Contributions are welcome! Areas for improvement:
-- Additional classifiers (SVM, Random Forest, etc.)
-- Hyperparameter optimization
-- Data augmentation
-- Model ensembling
-- Performance optimizations
-
-## License
-
-This project is open source and available under the MIT License.
-
-
-## Contact
-
-For questions or issues, please open an issue on GitHub.
-
----
-
-**Note**: This is an educational project demonstrating various machine learning approaches. For production digit recognition, use established libraries like scikit-learn or pre-trained models.
