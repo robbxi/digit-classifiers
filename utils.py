@@ -6,7 +6,7 @@ def _load_image(file_path):
     img = Image.open(file_path).convert('L')
     return np.array(img).flatten()
 
-def load_and_split_mnist(folder_path, train_ratio=0.8, seed=42):
+def load_and_split_mnist(folder_path, train_ratio=0.8, seed=42,size=1):
     cache_path = f'data/mnist_data_{seed}.npz'
 
     if os.path.exists(cache_path):
@@ -36,8 +36,9 @@ def load_and_split_mnist(folder_path, train_ratio=0.8, seed=42):
     indices = np.random.permutation(len(X))
     X, y = X[indices], y[indices]
 
-    n_train = int(train_ratio * len(X))
-    (X_train, y_train), (X_test, y_test) = (X[:n_train], y[:n_train]), (X[n_train:], y[n_train:])
+    length = int(len(X)*size)
+    n_train = int(train_ratio * length)
+    (X_train, y_train), (X_test, y_test) = (X[:n_train], y[:n_train]), (X[n_train:length], y[n_train:length])
 
     np.savez(f'mnist_data_{seed}.npz', X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)
     return (X_train, y_train), (X_test, y_test)

@@ -108,5 +108,3 @@ def test(model,X_test,y_test,status=True,random=True,n=100):
 
 model = make_models(X_train,y_train,learning_rate=.01,batch_size=64,epochs=32)
 test(model,X_test,y_test,status=False,random=True,n=5000)
-
-
